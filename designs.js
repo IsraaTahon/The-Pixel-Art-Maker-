@@ -9,25 +9,26 @@
 	const colorPixel = document.querySelector('#colorPicker').value;
     
 
-    // User submite height and width size function call
+    // Build table from form's input data
    
          function makeGrid(height, width) {
 	           
 
-	       for (let row = 0; row < height; row++ ) {
-	       	   let tableR = document.createElement("tr");
+	       for (let row = 0; row < height; row++ ) {   // Build table rows
+	       	   let tableRow = document.createElement("tr");
 	        
 
-	        for (let cell = 0; cell <  width; cell++) {
-	            let tableC = document.createElement("td");
-	            tableR.appendChild(tableC);
+	        for (let cell = 0; cell <  width; cell++) {     // Build table columns        
+	            let tableCell = document.createElement("td");
+	            tableRow.appendChild(tableCell);
 	          }
-           tableElement.appendChild(tableR);
+           tableElement.appendChild(tableRow);
 	   }
 
 };
           
            // User Select color input
+           // Aplying color to td's background
            
 		    tableElement.addEventListener('click', (e) => {
 		     document.querySelector('#colorPicker');
@@ -36,10 +37,10 @@
 		
 
              
-     
+            // Submit button
 
         let sizePicker = document.getElementById('sizePicker').addEventListener('submit', (e) => {
-		    e.preventDefault();
+		    e.preventDefault();         //prevent form from submitting
 		    tableElement.innerHTML = "";
 	  	   let gridHeight = document.getElementById("inputHeight").value;
 	       let gridWidth = document.getElementById("inputWidth").value;
