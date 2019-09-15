@@ -3,33 +3,32 @@
 
 // When size is submitted by the user, call makeGrid()
 
-     // Variables
-  
-	const tableElement = document.querySelector('#pixelCanvas');
-	const colorPixel = document.querySelector('#colorPicker').value;
-    
-
-    // Build table from form's input data
-   
+	/**
+	 * A grid should appear when
+	 * users submit width and height
+	 */
+       
+        
          function makeGrid(height, width) {
 	           
 
 	       for (let row = 0; row < height; row++ ) {   // Build table rows
-	       	   let tableRow = document.createElement("tr");
+	       	   let tableR = document.createElement("tr");
 	        
 
 	        for (let cell = 0; cell <  width; cell++) {     // Build table columns        
-	            let tableCell = document.createElement("td");
-	            tableRow.appendChild(tableCell);
+	            let tableC = document.createElement("td");
+	            tableR.appendChild(tableC);
 	          }
-           tableElement.appendChild(tableRow);
+           tableElement.appendChild(tableR);
 	   }
 
 };
           
            // User Select color input
            // Aplying color to td's background
-           
+                    const tableElement = document.querySelector('#pixelCanvas');
+                    const colorPicker = document.querySelector('#colorPicker');
 		    tableElement.addEventListener('click', (e) => {
 		     document.querySelector('#colorPicker');
 		     e.target.style.backgroundColor = colorPicker.value;
