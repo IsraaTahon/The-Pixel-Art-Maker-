@@ -9,7 +9,7 @@ So You’ll build a single-page web app that allows users to draw pixel art on a
 
 You can run a hosted version of the app at 
 
-To run a local copy, clone or download the code repository at https://github.com/sarah-maris/udacity-pixel-art.githttps://github.com/sarah-maris/udacity-pixel-art.git. If downloaded, unzip the folder and run index.html in your favorite browser.
+To run a local copy, clone or download the code repository at https://github.com/IsraaTahon/The-Pixel-Art-Maker- and run index.html in your favorite browser.
 
 
 
