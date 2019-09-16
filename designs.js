@@ -16,11 +16,11 @@
 	       	   let tableR = document.createElement("tr");
 	        
 
-	        for (let cell = 0; cell <  width; cell++) {     // Build table columns        
-	            let tableC = document.createElement("td");
-	            tableR.appendChild(tableC);
-	          }
-           tableElement.appendChild(tableR);
+		   for (let cell = 0; cell <  width; cell++) {     // Build table columns        
+	                let tableC = document.createElement("td");
+	                tableR.appendChild(tableC);
+			  }
+                   tableElement.appendChild(tableR);
 	   }
 
 };
