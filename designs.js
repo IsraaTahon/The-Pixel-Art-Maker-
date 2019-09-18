@@ -16,8 +16,8 @@
          function makeGrid(height, width) {
 	           
 
-	       for (let row = 0; row < height; row++ ) {   // Build table rows
-	       	   let tableR = document.createElement("tr");
+	    for (let row = 0; row < height; row++ ) {   // Build table rows
+	        let tableR = document.createElement("tr");
 	        
                       for (let cell = 0; cell <  width; cell++) {     // Build table columns        
 		          let tableC = document.createElement("td");
