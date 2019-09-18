@@ -1,6 +1,10 @@
+/**
+  * @desc create a grid of squares 
+  * @param int $width - number of squares representing the width of the grid
+  * @param int $height - number of squares representing the height of the grid
+*/
 // Select color input
 // Select size input
-
 // When size is submitted by the user, call makeGrid()
 
 	/**
@@ -15,13 +19,12 @@
 	       for (let row = 0; row < height; row++ ) {   // Build table rows
 	       	   let tableR = document.createElement("tr");
 	        
-
-		   for (let cell = 0; cell <  width; cell++) {     // Build table columns        
-	                let tableC = document.createElement("td");
-	                tableR.appendChild(tableC);
-			  }
-                   tableElement.appendChild(tableR);
-	   }
+                      for (let cell = 0; cell <  width; cell++) {     // Build table columns        
+		          let tableC = document.createElement("td");
+			  tableR.appendChild(tableC);
+				}
+                      tableElement.appendChild(tableR);
+	      }
 
 };
           
