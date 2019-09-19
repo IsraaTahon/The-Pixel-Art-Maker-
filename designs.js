@@ -6,6 +6,7 @@
 // Select color input
 // Select size input
 // When size is submitted by the user, call makeGrid()
+
 const tableElement = document.getElementById("pixelCanvas");
 const inputHeight = document.getElementById('#inputHeight');
 const inputWidth = document.getElementById('#inputWidth');
@@ -17,7 +18,6 @@ const colorPicker = document.querySelector('#colorPicker').value;
  */
 
 function makeGrid(height, width) {
-
  for (let i = 0; i < height; i++) { // Build table rows
   let tableRow = document.createElement("tr");
 
@@ -36,13 +36,17 @@ function makeGrid(height, width) {
 function colorPixel(e) {
  let colorPicker = document.querySelector("#colorPicker").value;
  e.target.style.backgroundColor = colorPicker;
-});
+};
 
 
+function colorPixel(e) {
+ let colorPicker = document.querySelector("#colorPicker").value;
+ e.target.style.backgroundColor = colorPicker;
+}
 
 // Submit button
 
-const startGame = document.getElementById('sizePicker');
+const startGame = document.getElementById('#sizePicker');
 
 sizePicker.addEventListener('submit', (e) => {
  e.preventDefault(); //prevent form from submitting
@@ -55,6 +59,13 @@ sizePicker.addEventListener('submit', (e) => {
 
  makeGrid(height, width);
 
+ let pixels = document.querySelectorAll('td');
+
+ for (let i = 0; i < pixels.length; i++) {
+  pixels[i].addEventListener('click', colorPixel, false);
+    }
 
 
 });
+
+
