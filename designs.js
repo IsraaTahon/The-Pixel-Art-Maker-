@@ -6,50 +6,55 @@
 // Select color input
 // Select size input
 // When size is submitted by the user, call makeGrid()
+const tableElement = document.getElementById("pixelCanvas");
+const inputHeight = document.getElementById('#inputHeight');
+const inputWidth = document.getElementById('#inputWidth');
+const colorPicker = document.querySelector('#colorPicker').value;
 
-	/**
-	 * A grid should appear when
-	 * users submit width and height
-	 */
-       
-        
-         function makeGrid(height, width) {
-	           
+/**
+ * A grid should appear when
+ * users submit width and height
+ */
 
-	    for (let row = 0; row < height; row++ ) {   // Build table rows
-	        let tableR = document.createElement("tr");
-	        
-                      for (let cell = 0; cell <  width; cell++) {     // Build table columns        
-		          let tableC = document.createElement("td");
-			  tableR.appendChild(tableC);
-				}
-                      tableElement.appendChild(tableR);
-	      }
+function makeGrid(height, width) {
+
+ for (let i = 0; i < height; i++) { // Build table rows
+  let tableRow = document.createElement("tr");
+
+  for (let j = 0; j < width; j++) { // Build table columns        
+   let tableCell = document.createElement("td");
+   tableRow.appendChild(tableCell);
+  }
+  tableElement.appendChild(tableRow);
+ }
 
 };
-          
-           // User Select color input
-           // Aplying color to td's background
-                    const tableElement = document.querySelector('#pixelCanvas');
-                    const colorPicker = document.querySelector('#colorPicker');
-		    tableElement.addEventListener('click', (e) => {
-		     document.querySelector('#colorPicker');
-		     e.target.style.backgroundColor = colorPicker.value;
-		    });
-		
 
-             
-            // Submit button
+// User Select color input
+// Aplying color to td's background
 
-        let sizePicker = document.getElementById('sizePicker').addEventListener('submit', (e) => {
-		    e.preventDefault();         //prevent form from submitting
-		    tableElement.innerHTML = "";
-	  	   let gridHeight = document.getElementById("inputHeight").value;
-	       let gridWidth = document.getElementById("inputWidth").value;
-	        
-	      makeGrid(gridHeight, gridWidth);  
+function colorPixel(e) {
+ let colorPicker = document.querySelector("#colorPicker").value;
+ e.target.style.backgroundColor = colorPicker;
+});
 
-        
 
-      });
 
+// Submit button
+
+const startGame = document.getElementById('sizePicker');
+
+sizePicker.addEventListener('submit', (e) => {
+ e.preventDefault(); //prevent form from submitting
+
+ tableElement.innerHTML = "";
+
+ let width = document.getElementById("inputWidth").value;
+ let height = document.getElementById("inputHeight").value;
+
+
+ makeGrid(height, width);
+
+
+
+});
